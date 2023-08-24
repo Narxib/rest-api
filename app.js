@@ -28,9 +28,11 @@ app.use(cors({
     }
 }))
 
-app.get("/", (req, res) =>
-    res.json({ mess: "Hola munfo" })
-)
+app.get("/", ((req, res) => {
+    res.setHeader('Content-type', 'text/html')
+    res.end("<h2>Landing API page</h2>")
+}
+))
 
 
 app.get("/movies", (req, res) => {
