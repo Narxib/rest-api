@@ -13,7 +13,7 @@ export class MovieModel {
     }
 
     static async getById({ id }) {
-        const movie = movie.find(movie => movie.id == id)
+        const movie = movies.find(movie => movie.id == id)
         return movie
     }
 
@@ -37,10 +37,10 @@ export class MovieModel {
     }
 
     static async update({ id, input }) {
-        const movieIndex = movies.findIndex(movie => movie.id == id)
-        if (movieIndex == -1) return false
+        const movieIndex = movies.findIndex(movie => movie.id === id)
+        if (movieIndex === -1) return false
         movies[movieIndex] = {
-            ...movie[movieIndex],
+            ...movies[movieIndex],
             ...input
         }
         return movies[movieIndex]
