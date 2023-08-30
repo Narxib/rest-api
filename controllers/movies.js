@@ -1,7 +1,5 @@
-import picocolors from "picocolors"
-import { MovieModel } from "../models/movie.js"
+import { MovieModel } from "../models/database/movie.js"
 import { validateMovie, validatePartialMovie } from "../schemes/movieSchema.js"
-import pico from "picocolors"
 export class MovieController {
     static async getAll(req, res) {
         const { genre } = req.query
